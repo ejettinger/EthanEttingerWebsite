@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  background-color: #F5F5F1;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===== LAYOUT CONTAINER ===== */
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.clear {
+  clear: both;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: black;
+}
+
+.site-title {
+  font-size: 30px;
+  color: #F5F5F1;
+  text-align: center;
+  padding: 28px 0;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 18px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DEDACF;
+  padding: 56px 0;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: black;
+}
+
+.text-col {
+  float: left;
+  width: 680px;
+}
+
+.image-col {
+  float: right;
+  width: 400px;
+  text-align: center;
+}
+
+/* ===== PROFILE PHOTO (About Me) ===== */
+.profile-img {
+  display: block;
+  width: 398px;
+  height: 392px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* ===== SECTION IMAGES ===== */
+.education-img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.reference-img {
+  width: 220px;
+  height: 268px;
+  object-fit: cover;
+}
+
+/* ===== PAST EXPERIENCES (job entries) ===== */
+
+#past-experiences{
+    text-align: center;
+}
+
+.job {
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.job-role {
+  font-weight: bold;
+  color: black;
+}
+
+.job-dates {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.job-list, .item-list {
+  padding-left: 20px;
+}
+
+.job-list {
+  text-align: left;
+}
+
+/* ===== SKILLS ===== */
+.skills-list {
+  list-style: none;
+}
+
+.skills-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.skills-list li::after {
+  content: "\00B7";
+  margin-left: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.skills-list li:last-child::after {
+  content: "";
+  margin-left: 0;
+}
+
+.experience-col {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.dual-row {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DEDACF;
+}
+
+.col-left {
+  float: left;
+  width: 519px;
+  padding: 56px 40px 56px 0;
+  border-right: 1px solid #DEDACF;
+}
+
+.col-right {
+  float: right;
+  width: 520px;
+  padding: 56px 0 56px 40px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: black;
+  padding: 26px 0;
+  text-align: center;
+}
+
+.footer-item {
+  display: inline-block;
+  margin: 0 28px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #F5F5F1;
+}
+
+.footer-link {
+  color: #F5F5F1;
+}
