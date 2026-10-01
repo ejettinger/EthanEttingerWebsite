@@ -15,20 +15,20 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* ===== LAYOUT CONTAINER ===== */
 .container {
-  width: 1120px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-.clear {
-  clear: both;
-}
-
 /* ===== HEADER ===== */
 header {
-  background-color: black;
+  background-color: #1F3B5C;
 }
 
 .site-title {
@@ -38,23 +38,38 @@ header {
   padding: 28px 0;
 }
 
-/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION (CSS Grid) ===== */
 nav {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom: 2px solid black;
+  background-color: #16293F;
+  border-bottom: 3px solid #C9A227;
 }
 
-.nav-item {
-  display: inline-block;
+ul.topnav {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
 }
 
 .nav-link {
-  display: inline-block;
-  padding: 18px 16px;
+  display: block;
+  padding: 14px 16px;
   font-size: 14px;
   font-weight: bold;
-  color: black;
+  color: #F5F5F1;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Change background color of links on hover */
+.nav-link:hover {
+  background-color: #C9A227;
+  color: #16293F;
+}
+
+/* Hide the menu icon on large screens */
+ul.topnav li.icon {
+  display: none;
 }
 
 /* ===== SECTIONS ===== */
@@ -62,6 +77,14 @@ nav {
   background-color: #FFFFFF;
   border-bottom: 1px solid #DEDACF;
   padding: 56px 0;
+}
+
+/* Text + image sections: two-column grid */
+.section .container {
+  display: grid;
+  grid-template-columns: 680fr 400fr;
+  column-gap: 40px;
+  align-items: start;
 }
 
 h2 {
@@ -73,14 +96,7 @@ p {
   color: black;
 }
 
-.text-col {
-  float: left;
-  width: 680px;
-}
-
 .image-col {
-  float: right;
-  width: 400px;
   text-align: center;
 }
 
@@ -108,12 +124,25 @@ p {
 
 /* ===== PAST EXPERIENCES (job entries) ===== */
 
-#past-experiences{
-    text-align: center;
+#past-experiences {
+  text-align: center;
 }
 
-.job {
-  margin-bottom: 32px;
+/* Past Experiences uses a single centered column */
+#past-experiences .container {
+  grid-template-columns: 1fr;
+}
+
+.experience-col {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  row-gap: 32px;
+}
+
+.experience-col h2 {
+  margin-bottom: -12px;
 }
 
 h3 {
@@ -130,6 +159,12 @@ h3 {
   font-size: 14px;
   margin-bottom: 8px;
 }
+
+.item-list a {
+  color: #1F3B5C;
+  font-weight: bold;
+}
+
 
 .job-list, .item-list {
   padding-left: 20px;
@@ -161,39 +196,43 @@ h3 {
   margin-left: 0;
 }
 
-.experience-col {
-  width: 800px;
-  margin: 0 auto;
-}
-
+/* ===== TWO-COLUMN ROWS (CSS Grid) ===== */
 .dual-row {
   background-color: #FFFFFF;
   border-bottom: 1px solid #DEDACF;
 }
 
+.dual-row .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .col-left {
-  float: left;
-  width: 519px;
   padding: 56px 40px 56px 0;
   border-right: 1px solid #DEDACF;
 }
 
 .col-right {
-  float: right;
-  width: 520px;
   padding: 56px 0 56px 40px;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (CSS Grid) ===== */
 footer {
-  background-color: black;
+  background-color: #1F3B5C;
+  border-top: 3px solid #C9A227;
   padding: 26px 0;
   text-align: center;
 }
 
+footer ul {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  column-gap: 56px;
+}
+
 .footer-item {
-  display: inline-block;
-  margin: 0 28px;
   font-size: 14px;
   font-weight: bold;
   color: #F5F5F1;
@@ -201,4 +240,111 @@ footer {
 
 .footer-link {
   color: #F5F5F1;
+}
+
+.footer-link:hover {
+  color: #C9A227;
+}
+
+/* ===== MEDIUM SCREENS (tablets) ===== */
+@media screen and (max-width: 900px) {
+  ul.topnav {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .profile-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ===== SMALL SCREENS (less than 500px) ===== */
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .site-title {
+    font-size: 24px;
+    padding: 20px 0;
+  }
+
+  /* Responsive menu: hide every link except "Home" and show the icon */
+  nav .container {
+    padding: 0;
+  }
+
+  ul.topnav {
+    grid-template-columns: 1fr auto;
+    justify-content: stretch;
+  }
+
+  ul.topnav li:not(:first-child) {
+    display: none;
+  }
+
+  ul.topnav li.icon {
+    display: block;
+  }
+
+  ul.topnav li a {
+    text-align: left;
+    padding: 14px 20px;
+  }
+
+  /* The "responsive" class is added to the topnav with JavaScript when the
+     user clicks on the icon. It shows the links stacked vertically. */
+  ul.topnav.responsive {
+    position: relative;
+    grid-template-columns: 1fr;
+  }
+
+  ul.topnav.responsive li:not(:first-child) {
+    display: block;
+  }
+
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* Stack every two-column grid into one column */
+  .section {
+    padding: 36px 0;
+  }
+
+  .section .container,
+  .dual-row .container {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .profile-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .col-left,
+  .col-right {
+    padding: 36px 0;
+  }
+
+  .col-left {
+    border-right: none;
+    border-bottom: 1px solid #DEDACF;
+  }
+
+  footer ul {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
+    column-gap: 20px;
+  }
 }

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ethan Ettinger Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
+ 
 <body>
-
+ 
   <!-- HEADER -->
   <header id="home">
     <div class="container">
       <h1 class="site-title">Ethan Ettinger Portfolio</h1>
     </div>
   </header>
-
+ 
   <!-- NAVIGATION -->
-  <nav>
+  <nav id="main-nav">
     <div class="container">
-      <ul>
+      <ul class="topnav" id="myTopnav">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
@@ -29,12 +30,13 @@
         <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
         <li class="nav-item"><a class="nav-link" href="#references">References</a></li>
+        <li class="nav-item icon"><a class="nav-link" href="javascript:void(0);" onclick="myFunction()" aria-label="Toggle menu">&#9776;</a></li>
       </ul>
     </div>
   </nav>
-
+ 
   <main>
-
+ 
     <!-- ABOUT ME -->
     <section id="about" class="section">
       <div class="container">
@@ -50,13 +52,12 @@
             team
             environments.</p>
         </div>
-        <div class="image-col">
+        <figure class="image-col">
           <img class="profile-img" src="images/ethan.jpeg" alt="Portrait of Ethan Ettinger">
-        </div>
-        <div class="clear"></div>
+        </figure>
       </div>
     </section>
-
+ 
     <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
@@ -70,13 +71,12 @@
             maintaining
             academic responsibilities and team leadership.</p>
         </div>
-        <div class="image-col">
+        <figure class="image-col">
           <img class="education-img" src="images/newhaven.png" alt="University of New Haven seal">
-        </div>
-        <div class="clear"></div>
+        </figure>
       </div>
     </section>
-
+ 
     <!-- PROJECTS + BLOGS -->
     <div class="dual-row">
       <div class="container">
@@ -96,15 +96,14 @@
             <li><a href="https://docs.google.com/document/d/12nAKbruHBOhRib-V_NbwwDB_hze5VnptEm89zbLzAK0/edit?usp=sharing">Catcher Defense Analysis (CatcherRating)</a></li>
           </ul>
         </section>
-        <div class="clear"></div>
       </div>
     </div>
-
+ 
     <!-- PAST EXPERIENCES -->
     <section id="past-experiences" class="section">
       <div class="container">
         <div class="experience-col">
-            <h2>Past Experiences</h2>
+          <h2>Past Experiences</h2>
  
           <article class="job">
             <h3>Shiseido Americas, New York, NY</h3>
@@ -143,10 +142,9 @@
             </ul>
           </article>
         </div>
-        <div class="clear"></div>
       </div>
     </section>
-
+ 
     <!-- CERTIFICATIONS + SKILLS -->
     <div class="dual-row">
       <div class="container">
@@ -176,10 +174,9 @@
             <li>Jamf</li>
           </ul>
         </section>
-        <div class="clear"></div>
       </div>
     </div>
-
+ 
     <!-- REFERENCES -->
     <section id="references" class="section">
       <div class="container">
@@ -189,15 +186,14 @@
           <p class="job-role">Baseball Coach, University of New Haven</p>
           <p>Contact information available upon request.</p>
         </div>
-        <div class="image-col">
+        <figure class="image-col">
           <img class="reference-img" src="images/ray.jpg" alt="Portrait of Ray Guarino">
-        </div>
-        <div class="clear"></div>
+        </figure>
       </div>
     </section>
-
+ 
   </main>
-
+ 
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -209,7 +205,18 @@
       </ul>
     </div>
   </footer>
-
+ 
+  <!-- RESPONSIVE MENU (Extra Credit) -->
+  <script>
+    "use strict";
+ 
+    function myFunction() {
+      let x = document.getElementById("myTopnav");
+      x.classList.toggle("responsive");
+    }
+  </script>
+ 
 </body>
-
+ 
 </html>
+ 
